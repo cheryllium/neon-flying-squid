@@ -1,58 +1,37 @@
 var nfs = {
-    beget: beget, 
-    glideIn: glideIn, 
-    glideOut: glideOut, 
-    glideToggle: glideToggle, 
-}
+    beget: function() {
+	var squidlets = $("[data-squid]"); // Have you ever wanted to DATE A SQUID? ;)
+	squidlets.addClass("squid"); 
+    }, 
+    glideIn: function(appellation, bearing) {
+	var squid = $("[data-squid='"+appellation+"']");
+	if(squid.hasClass("manifest")) return; 
 
-/* Primary functions */
+	squid.css(bearing, '-55px'); 
 
-function beget() {
-    var squidlets = $("[data-squid]"); // Have you ever wanted to DATE A SQUID? ;)
-    squidlets.addClass("squid"); 
-}
+	var termini = {opacity: 1.0}; 
+	termini[bearing] = 0; 
+	
+	squid.animate(termini, 1000, "easeOutCubic"); 
+	squid.addClass("manifest"); 
+    }, 
+    glideOut: function(appellation, bearing) {
+	var squid = $("[data-squid='"+appellation+"']");
+	if(!squid.hasClass("manifest")) return; 
 
-function glideIn(appellation, bearing) {
-    var squid = ensnare(appellation); 
+	var termini = {opacity: 0}; 
+	termini[bearing] = '-55px'; 
 
-    console.log(squid.hasClass("manifest")); 
+	squid.animate(termini, 1000, "easeInCubic"); 
+	squid.removeClass("manifest"); 
+    }, 
+    glideToggle: function(appellation, bearing) {
+	var squid = $("[data-squid='"+appellation+"']");
 
-    if(squid.hasClass("manifest")) return; 
-
-    squid.css(bearing, '-55px'); 
-
-    var termini = {opacity: 1.0}; 
-    termini[bearing] = 0; 
-    
-    squid.animate(termini, 1000, "easeOutCubic"); 
-    squid.addClass("manifest"); 
-}
-
-function glideOut(appellation, bearing) {
-    var squid = ensnare(appellation); 
-
-    if(!squid.hasClass("manifest")) return; 
-
-    var termini = {opacity: 0}; 
-    termini[bearing] = '-55px'; 
-
-    squid.animate(termini, 1000, "easeInCubic"); 
-    squid.removeClass("manifest"); 
-}
-
-function glideToggle(appellation, bearing) {
-    var squid = ensnare(appellation); 
-
-    if(squid.hasClass("manifest")) {
-	glideOut(appellation, bearing); 
-    } else {
-	glideIn(appellation, bearing); 
-    }
-
-}
-
-/* Secondary functions, which exist in commensal symbiosis to the primary ones */
-
-function ensnare(appellation) {
-    return $("[data-squid='"+appellation+"']");
+	if(squid.hasClass("manifest")) {
+	    glideOut(appellation, bearing); 
+	} else {
+	    glideIn(appellation, bearing); 
+	}
+    }, 
 }
