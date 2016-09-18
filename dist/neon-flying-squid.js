@@ -22,7 +22,9 @@ var nfs = {
 	var termini = {opacity: 0}; 
 	termini[bearing] = '-55px'; 
 
-	squid.animate(termini, 1000, "easeInCubic"); 
+	squid.animate(termini, 1000, "easeInCubic", function() {
+	    squid.css(bearing, 0); 
+	}); 
 	squid.removeClass("manifest"); 
     }, 
 }
