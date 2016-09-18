@@ -15,6 +15,8 @@ function beget() {
 function glideIn(appellation, bearing) {
     var squid = ensnare(appellation); 
 
+    console.log(squid.hasClass("manifest")); 
+
     if(squid.hasClass("manifest")) return; 
 
     squid.css(bearing, '-55px'); 
@@ -31,7 +33,7 @@ function glideOut(appellation, bearing) {
 
     if(!squid.hasClass("manifest")) return; 
 
-    var termini = {opacity: 1.0}; 
+    var termini = {opacity: 0}; 
     termini[bearing] = '-55px'; 
 
     squid.animate(termini, 1000, "easeInCubic"); 
