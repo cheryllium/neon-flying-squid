@@ -25,13 +25,15 @@ var nfs = {
 	squid.animate(termini, 1000, "easeInCubic"); 
 	squid.removeClass("manifest"); 
     }, 
-    glideToggle: function(appellation, bearing) {
-	var squid = $("[data-squid='"+appellation+"']");
-
-	if(squid.hasClass("manifest")) {
-	    glideOut(appellation, bearing); 
-	} else {
-	    glideIn(appellation, bearing); 
-	}
-    }, 
 }
+
+nfs.glideToggle = function(appellation, bearing) {
+    var squid = $("[data-squid='"+appellation+"']");
+
+    if(squid.hasClass("manifest")) {
+	nfs.glideOut(appellation, bearing); 
+    } else {
+	nfs.glideIn(appellation, bearing); 
+    }
+}; 
+
