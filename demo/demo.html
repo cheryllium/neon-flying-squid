@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../dist/neon-flying-squid.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+  </head>
+  <body>
+
+    <h1>neon-flying-squids.js</h1>
+    <div class="subtitle">
+      <p>a jquery plugin that beglidens your page</p>
+      <p><em>"Biologists, however, still do not fully understand the exact mechanisms by which the squid become airborne."</em></p></div>
+
+    <div class="demo-squids">
+
+      <div class="squid-tank">
+	<div data-squid="squid-from-top">
+	  &#12367;&#12467;:&#24417;
+	</div>
+	<div class="glide-from-top button">glide from top</div>
+      </div>
+
+      <div class="squid-tank">
+	<div data-squid="squid-from-bottom">
+	  &#12367;&#12467;:&#24417;
+	</div>
+	<div class="glide-from-bottom button">glide from bottom</div>
+      </div>
+
+      <div class="squid-tank">
+	<div data-squid="squid-from-left">
+	  &#12367;&#12467;:&#24417;
+	</div>
+	<div class="glide-from-left button">glide from left</div>
+      </div>
+
+      <div class="squid-tank">
+	<div data-squid="squid-from-right">
+	  &#12367;&#12467;:&#24417;
+	</div>
+	<div class="glide-from-right button">glide from right</div>
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script src="../dist/neon-flying-squid.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          nfs.beget(); 
+      }); 
+
+      $('.glide-from-top').click(function() {
+          nfs.glideToggle("squid-from-top", "top"); 
+      }); 
+      $('.glide-from-bottom').click(function() {
+          nfs.glideToggle("squid-from-bottom", "bottom"); 
+      }); 
+      $('.glide-from-left').click(function() {
+          nfs.glideToggle("squid-from-left", "left"); 
+      }); 
+      $('.glide-from-right').click(function() {
+          nfs.glideToggle("squid-from-right", "right"); 
+      }); 
+      
+
+    </script>
+
+  </body>
+</html>

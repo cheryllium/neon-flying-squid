@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif; 
+    text-align: center; 
+}
+
+.subtitle {
+    width: 50%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    color: #777; 
+    font-size: 90%; 
+}
+
+.demo-squids {
+    width: 80%; 
+    margin: 25px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.squid-tank > div {
+    font-size: 16pt; 
+    text-align: center; 
+    padding: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    margin: 10px; 
+    display: block; 
+}
+.squid-tank > .button {
+
+}
+.squid-tank > .button:hover {
+    cursor: pointer; 
+    background-color: #eee; 
+}
+
+.squid-tank {
+    display: inline-block; 
+    vertical-align: top; 
+    width: 24%; 
+}
